@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- changing page name -->
+<title>Daniel's Portfolio Homepage</title>
+
+<!-- changing link text style and initiating image box-->
+<style>
+	a:link {
+	  color: black; 
+	  background-color: transparent; 
+	  text-decoration: none;
+	}
+
+	a:visited {
+	  color: black;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
+
+	a:hover {
+	  color: black;
+	  background-color: transparent;
+	  text-decoration: underline;
+	}
+
+	a:active {
+	  color: black;
+	  background-color: transparent;
+	  text-decoration: underline;
+	}
+
+	.image-container {
+			background-color: #f0f0f5;
+	    width: 275px;
+	    height: 345px;
+	    position: relative;
+	    overflow: hidden;
+	  }
+	  img {
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    opacity: 0;
+	    transition: opacity 0.3s ease-in-out;
+	    width: 100%;
+	    height: 100%;
+	    object-fit: none;
+	  }
+	  .visible {
+	    opacity: 1;
+	  }
+</style>
+
+</head>
+<body bgcolor="e1e1ea">
+
+
+	<table bgcolor="faf9f6" align="center" border=7 style="width:900px" cellspacing="10" cellpadding="8">
+<tr>
+	<td colspan="3" bgcolor="LightGray" align="center">
+		<h1>Daniel Whittingham - AENG110 Project Portfolio</h1>
+		<hr>
+	</td>
+</tr>
+<br>
+
+<tr>
+	<td colspan="3" align="center">
+		<a href="index.html"><b>Home</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="print.html"><b>Print Project</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="photo.html"><b>Photo Project</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="video.html"><b>Video project</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="info.html"><b>Infographic</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</td>
+</tr>
+
+
+<tr>
+	<td style="width:112px; vertical-align:top">
+		<br><br>
+		<a href="index.html"><b>Home</b></a> <br><br>
+		<a href="print.html"><b>Print Project</b></a> <br><br>
+		<a href="photo.html"><b>> Photo Project</b></a> <br><br>
+		<a href="video.html"><b>Video project</b></a> <br><br>
+		<a href="info.html"><b>Infographic</b></a>
+	</td>
+
+
+<!--
+OKAYYYYY this part's complicated 
+In short the following section (as well as the bit added to the style section at the tio if the page) is entirely dedicated to making it so images can link to other images-->
+	<!--  -->
+	<td style="width:300px" align="center">
+	<!-- defining the image container for later swappage-->
+		<div class="image-container">
+	 	 	<img src="photos/PS_1.jpg" class="visible">
+	  	<img src="photos/PS_2.jpg">
+	  	<img src="photos/PS_3.jpg">
+	 		<img src="photos/PS_4.jpg">
+		</div>
+
+	  <button onclick="previousImage()">Previous</button>
+	  <button onclick="nextImage()">Next</button>
+
+
+	  <script>
+	    let index = 0;
+	    const images = document.querySelectorAll('.image-container img');
+
+	    function showImage(index) {
+	      images.forEach((img, i) => {
+	        if (i === index) {
+	          img.classList.add('visible');
+	        } else {
+	          img.classList.remove('visible');
+	        }
+	      });
+	    }
+
+	    function nextImage() {
+	      index++;
+	      if (index >= images.length) {
+	        index = 0;
+	      }
+	      showImage(index);
+	    }
+
+	    function previousImage() {
+	      index--;
+	      if (index < 0) {
+	        index = images.length - 1;
+	      }
+	      showImage(index);
+	    }
+	  </script>
+	</td>
+	
+
+	<td style="width:450px">
+		<font color="red">[insert text] </font>
+
+	</td>
+</tr>
+
+<!-- try and change spacing on copyright text box-->
+<tr>
+	<td colspan="3" bgcolor="LightGray" align="center">		
+		&copy; 2024 Daniel Whittingham
+	</td>
+</tr>
+
+</table>
+
+</body>
+</html>

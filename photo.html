@@ -30,6 +30,7 @@
 	  text-decoration: underline;
 	}
 
+	/* this section is used to define the color, size, and misc traits of the image box */
 	.image-container {
 	    border: 2px solid #c1c1d7;
 		background-color: #e1e1ea;
@@ -91,8 +92,8 @@
 
 <!--
 OKAYYYYY this part's complicated 
-In short the following section (as well as the bit added to the style section at the tio if the page) is entirely dedicated to making it so that you can swap between images-->
-	<!--  -->
+In short the following section (as well as the bit added to the style section at the tio if the page) is entirely dedicated to making it so that you can swap between images
+-->
 	<td style="width:300px" align="center">
 	<!-- defining the image container for later swappage-->
 		<div class="image-container">
@@ -102,14 +103,14 @@ In short the following section (as well as the bit added to the style section at
 	 		<img src="photos/PS_4.jpg">
 		</div>
 
-		<!-- move forward -->
+		<!-- move back -->
 	  <button onclick="previousImage()"> <- </button>
-
+	  	<!-- go to full pdf of images-->
 	  <a href="photos/fullsized/DW_Photoshop_Project.pdf"><button> Gallary </button></a>
-	  <!-- move back -->
+	  	<!-- move forward -->
 	  <button onclick="nextImage()"> -> </button>
 
-
+	  <!-- counting what image is currently displayed and knowing which one to swap to -->
 	  <script>
 	    let index = 0;
 	    const images = document.querySelectorAll('.image-container img');
@@ -156,7 +157,7 @@ In short the following section (as well as the bit added to the style section at
 	</td>
 </tr>
 
-<!-- try and change spacing on copyright text box-->
+
 <tr>
 	<td colspan="3" bgcolor="ccccff" align="center">		
 		&copy; 2024 Daniel Whittingham
